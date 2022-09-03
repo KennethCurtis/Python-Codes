@@ -25,7 +25,7 @@ def startup():
     args = parser.parse_args()
     os.system('mkdir ' + args.IP)
     doc_hold = ''
-    doc = open('/home/kali/Desktop/python/scanners/' + args.IP + '/smbvuln.txt', 'a+')
+    doc = open('/home/python/scanners/' + args.IP + '/smbvuln.txt', 'a+')
     for i in vuln_list:
         payload = 'nmap ' +args.IP + ' --script ' + i + ' -p 445'
         output = subprocess.Popen(['nmap', args.IP, '--script', i, '-p 445'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -35,7 +35,7 @@ def startup():
     prettify(args, doc_hold)
 
 def prettify(args, doc_hold):
-    doc1 = open('/home/kali/Desktop/python/scanners/' + args.IP + '/smbnmap.txt', 'w+')
+    doc1 = open('/home/python/scanners/' + args.IP + '/smbnmap.txt', 'w+')
     double_remove = doc_hold.replace('\\n\\n','\n')
     csv_replace = double_remove.replace('\\n',',')
     csv_list = csv_replace.split(',')
