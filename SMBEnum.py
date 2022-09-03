@@ -37,8 +37,8 @@ def check_vuln(stdout, doc, i):
     doc.write('\n')
 
 def prettify(args):
-    doc = open('/home/kali/Desktop/python/scanners/' + args.IP + '/smbenumnmap.txt', 'r')
-    doc1=open('/home/kali/Desktop/python/scanners/' + args.IP + '/pretty_smb_nmap.txt', 'w+')
+    doc = open('/home/python/scanners/' + args.IP + '/smbenumnmap.txt', 'r')
+    doc1=open('/home/python/scanners/' + args.IP + '/pretty_smb_nmap.txt', 'w+')
     read_output = doc.read()
     double_remove = read_output.replace('\\n\\n','\n')
     csv_replace = double_remove.replace('\\n',',')
