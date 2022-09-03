@@ -49,7 +49,6 @@ def check_vuln(stdout, doc, doc1, i):
         doc.write (i + ': VULERNABLE\n')
     else:
         doc.write (i + ': not a valid exploit\n')
-    doc1.write (str(stdout))
-    doc1.write('\n')
+    return doc_hold + str(stdout) + '\n'
 
 startup()
