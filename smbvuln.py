@@ -24,8 +24,8 @@ def startup():
     parser.add_argument('IP', type=str, help="Enter the value of the IP of the target.")
     args = parser.parse_args()
     os.system('mkdir ' + args.IP)
-    doc = open('/home/kali/Desktop/python/scanners/' + args.IP + '/smbvuln.txt', 'a+')
-    doc1 = open('/home/kali/Desktop/python/scanners/' + args.IP + '/smbnmap.txt', 'a+')
+    doc = open('/home//python/scanners/' + args.IP + '/smbvuln.txt', 'a+')
+    doc1 = open('/home/python/scanners/' + args.IP + '/smbnmap.txt', 'a+')
     for i in vuln_list:
         payload = 'nmap ' +args.IP + ' --script ' + i + ' -p 445'
         output = subprocess.Popen(['nmap', args.IP, '--script', i, '-p 445'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
